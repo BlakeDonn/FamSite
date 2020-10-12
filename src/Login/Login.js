@@ -62,7 +62,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function SignInSide(props) {
-  console.log(props);
   const classes = useStyles();
   const certainClasses = `${classes.paper} "aside"`;
   const handleSubmit = (event) => {
