@@ -1,94 +1,38 @@
 import React from "react";
-import Avatar from "@material-ui/core/Avatar";
-import Button from "@material-ui/core/Button";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import TextField from "@material-ui/core/TextField";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import Checkbox from "@material-ui/core/Checkbox";
-import Link from "@material-ui/core/Link";
-import Paper from "@material-ui/core/Paper";
-import Box from "@material-ui/core/Box";
-import Grid from "@material-ui/core/Grid";
-import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
-import Typography from "@material-ui/core/Typography";
-import {makeStyles} from "@material-ui/core/styles";
-const useStyles = makeStyles((theme) => ({
-    root: {
-        height: "100vh",
-    },
-    image: {
-        backgroundImage:
-            "url(https://i.etsystatic.com/18861265/r/il/a9b888/1846211497/il_1140xN.1846211497_7k0n.jpg)",
-        backgroundRepeat: "no-repeat",
-        backgroundColor:
-            theme.palette.type === "light"
-                ? theme.palette.grey[50]
-                : theme.palette.grey[900],
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-    },
-    paper: {
-        margin: theme.spacing(8, 4),
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-    },
-    avatar: {
-        margin: theme.spacing(1),
-        backgroundColor: theme.palette.secondary.main,
-    },
-    form: {
-        width: "100%", // Fix IE 11 issue.
-        marginTop: theme.spacing(1),
-    },
-    submit: {
-        margin: theme.spacing(3, 0, 2),
-    },
-}));
+import {Link, useHistory} from "react-router-dom";
 
 export default function Create() {
-    const classes = useStyles();
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        console.log(event);
-    };
-    return (
-        <form className={classes.form} onSubmit={handleSubmit}>
-            <TextField
-                variant="outlined"
-                margin="normal"
-                required
-                fullWidth
-                id="email"
-                label="Email Address"
-                name="email"
-                autoComplete="email"
-                autoFocus
-            />
-            <TextField
-                variant="outlined"
-                margin="normal"
-                required
-                fullWidth
-                name="password"
-                label="Password"
-                type="password"
-                id="password"
-                autoComplete="current-password"
-            />
-            <FormControlLabel
-                control={<Checkbox value="remember" color="primary" />}
-                label="Remember me"
-            />
-            <Button
-                type="submit"
-                fullWidth
-                variant="contained"
-                color="primary"
-                className={classes.submit}
-            >
-                Sign In
-            </Button>
-        </form>
-    );
+  // This is where account creation will happen
+  const history = useHistory({});
+  console.log(history);
+  // probably make these onClick functions dynamic by adding in contional of event location?
+  return (
+    <div>
+      <ul>
+        <h1>Glad to see you here!</h1>
+        <li>
+          <button
+            onClick={() =>
+              history.push({
+                pathname: "/create",
+                state: {
+                  state: {
+                    test: "New Here?",
+                  },
+                },
+              })
+            }
+          >New Here?</button>
+        </li>
+        <li>
+          <button onClick={() => history.push("/")}>Family Member?</button>
+        </li>
+        <li>
+          <button onClick={() => history.push("/")}>
+            Close enough to Family?
+          </button>
+        </li>
+      </ul>
+    </div>
+  );
 }
