@@ -1,7 +1,7 @@
 import React from "react";
 import {useHistory} from "react-router-dom";
 
-export default function Info(props) {
+export default function Info() {
   let history = useHistory();
   const path = history.location.pathname;
   if (path.includes("Member")) {
@@ -19,6 +19,4 @@ export default function Info(props) {
       </div>
     );
   }
-  // where conditional info for login will return
-  return <h1>hi</h1>;
 }
