@@ -15,11 +15,11 @@
 
 
 
-* **If bug, how can you replicate it** *
+* **If bug, how can you replicate it** 
 
 
 
 
-* **If feature, describe how the feature iproves the product** *
+* **If feature, describe how the feature iproves the product** 
 
 
