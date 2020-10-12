@@ -4,7 +4,7 @@ import Dashboard from "../Dashboard/Dashboard.js";
 import Eval from "../Eval/Eval.js";
 import Login from "../Login/Login.js";
 import Reset from "../Reset/Reset.js";
-import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 
 export default function App(props) {
   console.log(props);
