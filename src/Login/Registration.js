@@ -4,7 +4,7 @@ export default function Registration(props) {
     email: "",
     password: "",
     confirmPassword: "",
-    successMessage: null
+    successMessage: null,
   });
   const handleChange = (e) => {
     const {id, value} = e.target;
@@ -13,10 +13,13 @@ export default function Registration(props) {
       [id]: value,
     }));
   };
+  const login = () => {
+    useHistory.push("/");
+  };
   const handleSubmitClick = (e) => {
     e.preventDefault();
     if (state.password === state.confirmPassword) {
-      login()
+      login();
     } else {
       props.showError("Passwords do not match");
     }
